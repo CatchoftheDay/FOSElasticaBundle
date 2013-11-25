@@ -134,7 +134,7 @@ class ModelToElasticaAutoTransformer implements ModelToElasticaTransformerInterf
         $normalizeValue = function(&$v)
         {
             if ($v instanceof \DateTime) {
-                $v = $v->format('c');
+                $v = $v->format('U');
             } elseif (!is_scalar($v) && !is_null($v)) {
                 $v = (string)$v;
             }
